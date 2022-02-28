@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MainRoutes } from "./routes/MainRoutes";
+import * as C from './AppStyles';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <C.Container>
+        <C.Header>
+        <C.HeaderItem><img src="../assets/img/marvel-comics-logo.png" alt="Logo Marvel Comics"/></C.HeaderItem>
+        <C.HeaderItem>
+          <nav>
+            <ul>
+            <li><a>Cupons</a></li>
+            <li><a>Carrinho</a></li>
+            </ul>
+          </nav>
+        </C.HeaderItem>
+        </C.Header>      
+      <div>        
+         <MainRoutes />
+      </div>
+      <C.Footer>
+        <p>Todos os direitos reservados. ©2022 MARVEL</p>
+      </C.Footer>
+    </C.Container>
   );
 }
 
