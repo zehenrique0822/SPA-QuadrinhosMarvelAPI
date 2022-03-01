@@ -1,10 +1,11 @@
-export type HqType = {
+export type ComicType = {
     id: number;
     title: string;
     thumbnail: {
       path: string;
       extension: string;
     }
+    
     prices: [
       {
       type: string,
@@ -12,4 +13,5 @@ export type HqType = {
      }
     ]
     raro: boolean;
+    item: []
   }

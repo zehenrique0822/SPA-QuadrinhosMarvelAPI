@@ -1,7 +1,9 @@
+import * as C from  './styles';
+
 export const NotFound = () => {
     return (
-        <div>
+        <C.Container>
             Página não encontrada!!
-        </div>
+        </C.Container>
     );
 }

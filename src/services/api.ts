@@ -13,13 +13,23 @@ const http = axios.create({
 
 // Requisição com AXIOS
 export const api = {
-    getAllHqs: async () => {
+    getAllComics: async () => {
         let req = await http.get('/v1/public/comics',{        
                 params: {
                   ts: time,
                   apikey,
                   hash,        
-                  limit: 100
+                  limit: 20
+                }
+        });
+        return req.data.data.results;
+    },
+    getComic: async (id: string) => {
+        let req = await http.get(`/v1/public/comics/${id}`,{        
+                params: {
+                  ts: time,
+                  apikey,
+                  hash,        
                 }
         });
         return req.data.data.results;
