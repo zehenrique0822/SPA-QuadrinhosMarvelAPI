@@ -22,7 +22,11 @@ export const api = {
                   limit: 20
                 }
         });
-        return req.data.data.results;
+        let data;
+        data = req.data.data.results.map((item:any) => {
+            return { id: item.id, title: item.title, thumbnail: item.thumbnail, price: (item.prices[0].price === 0 ? 9.99 : item.prices[0].price) , raro: false ,amount: 0 }
+        })
+    return data;
     },
     getComic: async (id: string) => {
         let req = await http.get(`/v1/public/comics/${id}`,{        
@@ -32,6 +36,11 @@ export const api = {
                   hash,        
                 }
         });
-        return req.data.data.results;
+        
+        let data;
+        data = req.data.data.results.map((item:any) => {
+            return { id: item.id, title: item.title, thumbnail: item.thumbnail, price: (item.prices[0].price === 0 ? 9.99 : item.prices[0].price) , raro: false ,amount: 0}
+        })
+    return data;
     }
 }

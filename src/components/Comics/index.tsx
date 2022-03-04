@@ -9,20 +9,16 @@ type Props = {
     thumbnail: {
       path: string;
       extension: string;
-    }
-    prices: [
-      {
-      type: string,
-      price: number
-     }
-    ]
+    }    
+    price: number;
     raro: boolean;
-    item: any
+    item: {}
   } 
 
-export const Comics = ({ id, title, thumbnail, prices, raro, item}: Props) => {
+export const Comics = ({ id, title, thumbnail, price, raro, item}: Props) => {
 
-    const { addCart } = useContext(CartContext);
+    const { cart, addCart } = useContext(CartContext);
+    
     let img = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
     let titleUpper = title.toUpperCase();    
     return (
@@ -34,8 +30,8 @@ export const Comics = ({ id, title, thumbnail, prices, raro, item}: Props) => {
                 <p>{titleUpper}</p>
             </C.ContainerComicTitle>
             <C.ContainerComicButton>
-                <p>R$ {prices[0].price}</p>
-                <button onClick={() => addCart(item)}>ADICIONAR AO CARRINHO</button>            
+                <p>R$ {price}</p>
+                <button onClick={() => addCart(item, cart)}>ADICIONAR AO CARRINHO</button>            
             </C.ContainerComicButton>            
         </C.Container>
     );

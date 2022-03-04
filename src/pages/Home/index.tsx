@@ -19,7 +19,7 @@ export const Home = () => {
         const Comics = await api.getAllComics();  
         setComicList(Comics); 
         setLoading(false);                
-    } 
+    }     
     
         let RareList:any = [];
         function RareGenerator() {            
@@ -34,20 +34,22 @@ export const Home = () => {
         for(let i = 0; i <= percentage; i++){
             RareGenerator();
         }
+
+        console.log(ComicList);
         // Exibição da lista de Quadrinhos
     return (
         <C.Container> 
-            {loading && "Carregando..."}            
+            {loading && <C.Alert>Carregando...</C.Alert>}            
             {ComicList.map((item, index) => ( 
                 <Comics
                     key={index}
                     id={item.id}
                     title={item.title}
                     thumbnail={item.thumbnail}
-                    prices={item.prices} 
+                    price={item.price} 
                     raro={false} 
                     item={item}/>
-            ))}           
+            ))}    
         </C.Container>
     );
 

@@ -5,8 +5,11 @@ import { CartContext  } from '../../contexts/CartContext';
 
 export const Header = ({children}:any) => {
 
-    const { cart } = useContext(CartContext);
-
+    const { cart } = useContext(CartContext);    
+    const cartCount = Object.keys(cart).reduce((prev, curr) => {
+        return prev + cart[curr].amount;
+    }, 0);
+        
     return (
         <C.Header>
         <C.HeaderItem>
@@ -15,8 +18,7 @@ export const Header = ({children}:any) => {
         <C.HeaderItem>
         <nav>
             <ul>
-            <li><Link to="/cupons">Cupons</Link></li>
-            <li><Link to="/carrinho">Carrinho ({cart.length})</Link></li>
+            <li><Link to="/carrinho">Carrinho ({cartCount})</Link></li>
             </ul>
         </nav>
         </C.HeaderItem>

@@ -1,6 +1,7 @@
 import * as C from  './styles';
 import { useContext } from 'react';
 import { CartContext  } from '../../contexts/CartContext';
+import { Link } from 'react-router-dom';
 
 type Props = {
     title: string;
@@ -8,16 +9,11 @@ type Props = {
       path: string;
       extension: string;
     }
-    prices: [
-      {
-      type: string,
-      price: number
-     }
-    ]
+    price: number;
     item: any
   } 
 
-export const ComicInfoItem = ({ title, thumbnail, prices, item }: Props) => {
+export const ComicInfoItem = ({ title, thumbnail, price, item }: Props) => {
     
     const { addCart } = useContext(CartContext);
     let img = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
@@ -30,9 +26,9 @@ export const ComicInfoItem = ({ title, thumbnail, prices, item }: Props) => {
             <C.ContainerItem>
                 <h1>{title}</h1>
                 <p>Disponibilidade: Em estoque</p>
-                <p>R$ {prices[0].price === 0 ? 9.99 : prices[0].price}</p>
+                <p>R$ {price}</p>
                 <button onClick={() => addCart(item)}>ADICIONAR AO CARRINHO</button>
-                <button>FINALIZAR COMPRA</button>
+                <Link to={`/carrinho`}><button>FINALIZAR COMPRA</button></Link>
             </C.ContainerItem>
         </C.Container>
     );

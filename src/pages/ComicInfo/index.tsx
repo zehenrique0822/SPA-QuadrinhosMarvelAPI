@@ -36,7 +36,7 @@ console.log(Comic);
                     key={index}
                     title={item.title}
                     thumbnail={item.thumbnail}
-                    prices={item.prices}
+                    price={item.price}
                     item={item}
                     />
             ))}     

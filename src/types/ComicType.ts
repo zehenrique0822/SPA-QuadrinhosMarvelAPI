@@ -4,14 +4,8 @@ export type ComicType = {
     thumbnail: {
       path: string;
       extension: string;
-    }
-    
-    prices: [
-      {
-      type: string,
-      price: number
-     }
-    ]
+    }    
+    price: number;
     raro: boolean;
-    item: []
+    amount: number;
   }
