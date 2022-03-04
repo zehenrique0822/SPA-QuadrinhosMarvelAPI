@@ -3,7 +3,7 @@ import { TableCart } from '../../components/TableCart/index';
 
 export const Cart = () => {
 
-    return(
+    return (
         <C.Container>
             <TableCart />
         </C.Container>

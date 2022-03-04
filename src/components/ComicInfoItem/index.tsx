@@ -1,27 +1,27 @@
-import * as C from  './styles';
+import * as C from './styles';
 import { useContext } from 'react';
-import { CartContext  } from '../../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
 type Props = {
     title: string;
     thumbnail: {
-      path: string;
-      extension: string;
+        path: string;
+        extension: string;
     }
     price: number;
     item: any
-  } 
+}
 
 export const ComicInfoItem = ({ title, thumbnail, price, item }: Props) => {
-    
+
     const { addCart } = useContext(CartContext);
     let img = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
 
-    return(
+    return (
         <C.Container>
             <C.ContainerItem>
-                <img src={`${img}`} alt="Thumbnail HQ"/>
+                <img src={`${img}`} alt="Thumbnail HQ" />
             </C.ContainerItem>
             <C.ContainerItem>
                 <h1>{title}</h1>

@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Single Page Application de uma loja de quadrinhos utilizando a API da Marvel para todos os consumos de dados.
+     API: https://developer.marvel.com
+ 
+     O modo básico do App consiste de uma tela de lista de quadrinhos, uma tela de detalhe do quadrinho (comics) e uma 
+     funcionalidade de checkout dos quadrinhos adicionados.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  💻 Funcionalidades Desenvolvidas: 
+#### Listagem de quadrinhos.
+#### Tela de detalhe do quadrinho.
+#### Adição de quadrinhos ao carrinho.
+#### Tela do carrinho na qual pode se também remover ou incrementar e decrementar.
 
-## Available Scripts
+## 🔧 Funcionalidades Futuras:
+#### 10% dos quadrinhos carregados devem ser marcados como raros (aleatoriamente no próprio fonte ao carregar o REST).
+#### O checkout deve contemplar a opcão de código de desconto.
+#### Dois tipos de cupons: Cupons raros e cupons comuns. Cupons comuns dão desconto somente para quadrinhos comuns enquanto raros podem ser usados em qualquer tipo.
 
-In the project directory, you can run:
+## 💡 Tecnologias Utilizadas:
+  - HTML
+  - CSS
+  - REACT
+    - STYLED COMPONENTS
+    - HOOKS
+  - TYPESCRIPT
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## PREVIEW:
+ #### - HOME
+![image](https://user-images.githubusercontent.com/89668742/156704848-3c9c78c3-e449-4fed-8e25-e86cf749a749.png)
+ #### - CARRINHO
+![image](https://user-images.githubusercontent.com/89668742/156704898-590fcc0b-adcc-4e68-b77c-7a42d1ae6702.png)
+ #### - TELA DETALHE
+![image](https://user-images.githubusercontent.com/89668742/156704916-54c19b65-3619-415b-92a8-f8535a47b766.png)
