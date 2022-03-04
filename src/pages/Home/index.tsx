@@ -7,10 +7,11 @@ import * as C from './styles';
 export const Home = () => {
     const [ComicList, setComicList] = useState<ComicType[]>([]);
     const [loading, setLoading] = useState(false);
+    // Validação se a requisição foi concluida ou não para exibir carregando na tela.
     useEffect(() => {
         loadingComics();
     }, []);
-    //  Requisição de lista de Comics
+    //  Requisição de lista de Quadrinhos
     const loadingComics = async () => {
         setLoading(true);
         const Comics = await api.getAllComics();

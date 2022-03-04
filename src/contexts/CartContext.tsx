@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { ComicType } from "../types/ComicType";
 
+// Types de itens do contexto
 export type CartContextState = {
   cart: any;
   totalValue: number;
@@ -10,7 +11,7 @@ export type CartContextState = {
   removeFromCart: Function;
   changeItemAmount: Function;
 };
-
+// Valores padrões de itens do contexto
 const contextDefaultValues: CartContextState = {
   cart: {
     id: 0,
@@ -41,7 +42,7 @@ export const CartProvider: React.FC = ({ children }: any) => {
   const [cartCount, setCartCount] = useState<number>((contextDefaultValues.cartCount));
   const [cartValue, setCartValue] = useState<number>((contextDefaultValues.cartCount));
 
-  //const addCart = (newCart: [any]) => setCart((cart:any) => [...cart, newCart]);
+  // Função para adicionar item ao carrinho e caso já esteja adicionado aumentar a quantidade
   const addCart = (item: any, cart: any) => {
     setCart((old: any) => {
       let quantity = 0;
@@ -57,7 +58,7 @@ export const CartProvider: React.FC = ({ children }: any) => {
       }
     })
   }
-
+// Função para remover item do carrinho
   const removeFromCart = (cartId: any) => {
     setCart((old: any) => {
       const newCart: any = {}
@@ -69,7 +70,7 @@ export const CartProvider: React.FC = ({ children }: any) => {
       return newCart
     })
   }
-
+// Função para alterar quantidade de item no carrinho
   const changeItemAmount = (key: any, newQty: any) => {
     setCart((old: any) => {
       old[key].amount = newQty
@@ -78,10 +79,7 @@ export const CartProvider: React.FC = ({ children }: any) => {
       }
       return newCart
     })
-  }
-
-  console.log(cart);
-
+  }  
   return (
     <CartContext.Provider
       value={{

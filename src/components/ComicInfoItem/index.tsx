@@ -16,8 +16,9 @@ type Props = {
 export const ComicInfoItem = ({ title, thumbnail, price, item }: Props) => {
 
     const { addCart } = useContext(CartContext);
+    // Váriavel para montar caminho da imagem
     let img = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
-
+    // Exibição de dados do quadrinho selecionado
     return (
         <C.Container>
             <C.ContainerItem>

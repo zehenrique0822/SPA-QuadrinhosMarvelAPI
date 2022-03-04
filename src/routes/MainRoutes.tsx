@@ -4,6 +4,7 @@ import { Cart } from '../pages/Cart/index';
 import { NotFound } from '../pages/NotFound/index';
 import { ComicInfo } from '../pages/ComicInfo/index';
 
+// Rotas para navegação e exibição de outros componentes na tela
 
 export const MainRoutes = () => {
     return useRoutes([

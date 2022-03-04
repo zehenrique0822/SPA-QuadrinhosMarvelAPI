@@ -13,21 +13,21 @@ export const ComicInfo = () => {
     const [Comic, setComic] = useState<ComicType[]>([]);
     const [loading, setLoading] = useState(false);
 
+    // Validação se a requisição foi concluida e se o parametro id foi passado na url para exibir carregando na tela.
     useEffect(() => {
         if (params.id) {
             loadingComic(params.id);
         }
     }, []);
 
-    //  Requisição de lista de Comics
+    //  Requisição de dados do quadrinho selecionado
     const loadingComic = async (id: string) => {
         setLoading(true);
         const ComicGet = await api.getComic(id);
         setComic(ComicGet);
         setLoading(false);
-    }
-
-    console.log(Comic);
+    }    
+    // Exibição de detalhes do quadrinho selecionado
     return (
         <C.Container>
             {loading && "Carregando..."}

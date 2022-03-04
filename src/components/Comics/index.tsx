@@ -18,9 +18,11 @@ type Props = {
 export const Comics = ({ id, title, thumbnail, price, raro, item }: Props) => {
 
     const { cart, addCart } = useContext(CartContext);
-
+    // Váriavel para montar caminho da imagem.
     let img = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
+    // Deixar titulo em maisculo
     let titleUpper = title.toUpperCase();
+    // Exibição dos quadrinhos
     return (
         <C.Container>
             <C.ContainerComicImg>

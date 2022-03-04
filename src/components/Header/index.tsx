@@ -6,10 +6,11 @@ import { CartContext } from '../../contexts/CartContext';
 export const Header = ({ children }: any) => {
 
     const { cart } = useContext(CartContext);
+    // Conta de quantidade de itens no carrinho
     const cartCount = Object.keys(cart).reduce((prev, curr) => {
         return prev + cart[curr].amount;
     }, 0);
-
+    // Exibição do Header
     return (
         <C.Header>
             <C.HeaderItem>

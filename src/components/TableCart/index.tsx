@@ -6,19 +6,20 @@ export const TableCart = () => {
 
     const { cart, removeFromCart, changeItemAmount } = useContext(CartContext);
 
+    // Função para troca de quantidade no carrinho na qual é realizado após evento acontecer no input de quantidade
     const changeAmount = (key: any) => (evt: any) => {
         const newQty = Number(evt.target.value);
         changeItemAmount(key, newQty);
     }
+    // Conta de quantidade de itens no carrinho para validar se exibe ou não carrinho
     const cartCount = Object.keys(cart).reduce((prev, curr) => {
         return prev + cart[curr].amount;
     }, 0);
+    // Conta para pegar valor total dos itens do carrinho
     const cartValue = Object.keys(cart).reduce((prev, curr) => {
         return prev + cart[curr].amount * cart[curr].item.price;
     }, 0);
-
-    let cupom = 10;
-
+    // Exibição do carrinho
     return (
         <C.Div>
             {cartCount === 0 && <C.Alert>Sem itens no carrinho</C.Alert>}

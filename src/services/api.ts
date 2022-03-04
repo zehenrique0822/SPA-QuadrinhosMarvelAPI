@@ -11,7 +11,7 @@ const privateKey = '74cceade0af119f96660d4280cd9878345c23931';
 const time = Number(new Date());
 const hash = md5(time + privateKey + apikey);
 
-// Requisição com AXIOS
+// Requisições na API da Marvel com AXIOS
 export const api = {
     getAllComics: async () => {
         let req = await http.get('/v1/public/comics', {
