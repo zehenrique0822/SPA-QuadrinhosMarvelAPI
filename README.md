@@ -15,6 +15,7 @@
 #### Dois tipos de cupons: Cupons raros e cupons comuns. Cupons comuns dão desconto somente para quadrinhos comuns enquanto raros podem ser usados em qualquer tipo.
 #### Páginação de lista de quadrinho
 #### Busca na lista de quadrinho
+#### Novo Layout
 
 ## 💡 Tecnologias Utilizadas:
 #### - HTML
